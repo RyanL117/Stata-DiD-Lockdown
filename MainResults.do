@@ -365,8 +365,9 @@ pv, pv(pv*read) weight(w_fstuwt) brr rw(w_fsturwt*) fays(0.5): ///
 ***************
 clear
 use pisa_18_22
-keep if (victoria == 1 | tas == 1) & metro == 1
+keep if (victoria == 1 & metro == 1 | tas == 1) 
 
 pv, pv(pv*math) weight(w_fstuwt) brr rw(w_fsturwt*) fays(0.5): ///
     reg @pv i.victoria##i.post enghome  male escs immig  indig  no_device    [aw=@w]
+
 
